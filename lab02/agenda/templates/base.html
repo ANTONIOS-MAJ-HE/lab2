@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Agenda{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'lista_contactos' %}">Lista de Contactos</a></li>
+            <li><a href="{% url 'crear_contacto' %}">Crear Contacto</a></li>
+            <li><a href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Mi Agenda</p>
+    </footer>
+</body>
+</html>
